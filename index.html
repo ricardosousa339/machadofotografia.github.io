@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="https://kit.fontawesome.com/9e4fa59664.js" crossorigin="anonymous"></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +29,7 @@
                 </li>
                 <li>
                     <a href= "https://linktr.ee/machado0" class= "flex">
-                        <i class='fab fa-youtube'></i>
+                        <i class="fa-solid fa-link"></i>
                     </a>
                 </li>
             </ul>
@@ -39,6 +40,7 @@
 
     <!-- main content-->
     <main>
+        
     <section id = "about" class = "about py-7">
         <div class= "container">
             <div class= "about-content grid">
@@ -81,19 +83,19 @@
 
                 <div class="work-bottom grid">
                     <div>
-                        <span class="icon"><img src="images/landscape-icon.png"></span>
+                        <span class="icon"><img class="img-work" src="images/landscape-icon.png"></span>
                         <h3>Paisagem</h3>
                     </div>
                     <div>
-                        <span class="icon"><img src="images/street-icon.png"></span>
+                        <span class="icon"><img  class="img-work" src="images/street-icon.png"></span>
                         <h3>Urbana</h3>
                     </div>
                     <div>
-                        <span class="icon"><img src="images/portrait-icon.png"></span>
+                        <span class="icon"><img  class="img-work" src="images/portrait-icon.png"></span>
                         <h3>Retratos</h3>
                     </div>
                     <div>
-                        <span class="icon"><img src="images/wildlife-icon.png"></span>
+                        <span class="icon"><img  class="img-work" src="images/wildlife-icon.png"></span>
                         <h3>Animais</h3>
                     </div>
                 </div>
@@ -117,8 +119,8 @@
                 </div>
 
                 <div class="portfolio-grid grid">
-                    <div><img src="images/port-1.jpg"></div>
-                    <div><img src="images/port-2.jpg"></div>
+                    <div class="foto-grid"><img src="images/port-1.jpg"></div>
+                    <div><a href="foto.html" ><img src="images/port-2.jpg"></a></div>
                     <div><img src="images/port-3.jpg"></div>
                     <div><img src="images/port-4.PNG"></div>
                     <div><img src="images/port-5.jpg"></div>
@@ -133,6 +135,9 @@
     </section>
     <!-- end of portfolio section -->
 
+    <!-- TODO: Substituir o email por um link 
+        colocar o icone do whatsapp com link tbm
+    -->
     <!-- contact section -->
     <section id="contact" class="py-7">
         <div class="container">
@@ -141,12 +146,8 @@
                     <div class="title">
                         <h2>entre em contato comigo</h2>
                     </div>
-                    <p class="lead"><i class="fas fa-envelope"></i>mateus.souza.070202@gmail.com</p>
-                    <form action="">
-                        <input type="text" class="form-control" placeholder="Your name here ...">
-                        <input type="email" class="form-control" placeholder="Your email here">
-                        <input type="submit" class="btn-submit btn" value="Submit">
-                    </form>
+                    <p class="lead"><i class="fa-solid fa-envelope fa-xl"></i><span class="contato-links"><span><a href="mailto:mateus.souza.070202@gmail.com" >Enviar email</a></span></p>
+                    <p class ="lead"><i class="fa-brands fa-whatsapp fa-xl"></i><span class="contato-links"> <a href ="https://wa.me/5594991404214">Enviar mensagem</a></span></p>
                 </div>
 
                 <div class="contact-right">
@@ -192,8 +193,8 @@
                 <div>
                     <h3>Links</h3>
                     <ul class="flex">
-                        <li><a href = "#about">sobre mim</a></li>
-                        <li><a href = "#work">trabalhos</a></li>
+                        <li><a href = "#about">Sobre mim</a></li>
+                        <li><a href = "#work">Trabalhos</a></li>
                         <li><a href = "#portfolio">Portfolio</a></li>
                         <li><a href = "#contact">Fale comigo</a></li>
                         <li><a href = "#insta">Instagram</a></li>
