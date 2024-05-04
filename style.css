@@ -127,10 +127,14 @@ h1, h2, h3{
 /* about */
 .about-left{
     margin-bottom: 4rem;
-    margin-left: 50px;
+  
     height: 480px;
-    width: 480px;
+    
     overflow: hidden;
+}
+.img-about{
+    width: 480px;
+    height: 480px;
 }
 /* button down and title -reusable */
 .btn-down{
@@ -356,7 +360,7 @@ h1, h2, h3{
     }
     .about-left{
         margin-bottom: 0;
-        margin-left: 80px;
+     
         
     }
     .contact-content{
