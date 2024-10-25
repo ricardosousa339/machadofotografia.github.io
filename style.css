@@ -50,6 +50,38 @@ img{
     margin: 0 auto;
     padding: 0 2rem;
 }
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    display: none;
+    font-weight: bold;
+}
+
+.image-container:hover img {
+    filter: brightness(50%);
+}
+
+.image-container:hover .overlay-text {
+    display: block;
+}
+
+
+
 .vh-100{
     min-height: 100vh;
 }
@@ -150,6 +182,9 @@ h1, h2, h3{
 .btn-down-white{
     color: var(--light-color);
 }
+.btn-down-black{
+    color: var(--dark-color);
+}
 .title{
     margin-bottom: 5rem;
 }
@@ -199,7 +234,7 @@ h1, h2, h3{
 }
 
 .portfolio-grid > div:hover{
-    transform: scale(1.4);
+    transform: scale(1.2);
     translate: (-50%,-50%);
     z-index: 1;
 }
@@ -376,6 +411,7 @@ h1, h2, h3{
     .insta-grid{
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media(min-width: 992px){
@@ -462,10 +498,17 @@ h1, h2, h3{
     }
     
 
+}
 
-
-
-
+/* Media query para telas pequenas */
+@media (max-width: 768px) {
+    .image-container img {
+        filter: brightness(50%);
+    }
+    
+    .image-container .overlay-text {
+        display: block;
+    }
 }
 
 
