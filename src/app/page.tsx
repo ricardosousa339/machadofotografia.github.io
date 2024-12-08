@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 // import { faInstagram, faWebflow } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+
+//TODO: Incluir links do pixieset no lugar dos álbums
 class TypeWriting {
   element: HTMLElement;
   words: string[];
