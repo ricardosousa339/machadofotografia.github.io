@@ -1,38 +1,103 @@
-"use client"
-import Image from "next/image";
-import styles from "./page.module.css";
-import Script from "next/script";
+"use client";
 import { useEffect } from "react";
+import styles from "./page.module.css";
+
+class TypeWriting {
+  element: HTMLElement;
+  words: string[];
+  speed: number;
+  delay: number;
+  loop: string | null;
+  char: string;
+  counter: number;
+  isDeleting: boolean;
+
+  constructor(element: HTMLElement) {
+    this.element = element;
+    this.words = JSON.parse(element.getAttribute('data-words') || '[]');
+    this.speed = parseInt(element.getAttribute('data-speed') || '100', 10);
+    this.delay = parseInt(element.getAttribute('data-delay') || '1000', 10);
+    this.loop = element.getAttribute('data-loop');
+    this.char = '';
+    this.counter = 0;
+    this.isDeleting = false;
+    this.type();
+  }
+
+  type() {
+    const current = this.counter % this.words.length;
+    const fullText = this.words[current];
+
+    if (this.isDeleting) {
+      this.char = fullText.substring(0, this.char.length - 1);
+    } else {
+      this.char = fullText.substring(0, this.char.length + 1);
+    }
+
+    this.element.innerHTML = `<span class="wrap">${this.char}</span>`;
+
+    let typeSpeed = this.speed;
+
+    if (this.isDeleting) {
+      typeSpeed /= 2;
+    }
+
+    if (!this.isDeleting && this.char === fullText) {
+      typeSpeed = this.delay;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.char === '') {
+      this.isDeleting = false;
+      this.counter++;
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
 
 export default function Home() {
   useEffect(() => {
+    const elements = document.getElementsByClassName('typewrite');
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i] as HTMLElement;
+      new TypeWriting(element);
+    }
   }, []);
 
   return (
-    <div >
-            <header id="header" className="vh-100 flex">
+    <div>
+      <header id="header" className="vh-100 flex">
         <div className="container">
-            <div className="header-content">
-                <h1>Eu sou <br/><span className="typewrite" data-loop="yes" data-speed="100" data-delay="2000"
-                        data-words='["estudante", "fotografo", "designer"]'>
-                    </span></h1>
-                <h3>Mateus Machado</h3>
-
-                <ul className="social-links">
-                    <li>
-                        <a href="https://www.instagram.com/machado.fotografia01?igsh=MWtxNzJ6M3R5MzM5dg==" className="flex">
-                            <i className="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://linktr.ee/machado0" className="flex">
-                            <i className="fa-solid fa-link" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+          <div className="header-content">
+            <h1>
+              Eu sou <br />
+              <span
+                className="typewrite"
+                data-loop="yes"
+                data-speed="100"
+                data-delay="2000"
+                data-words='[""estudante", "fotografo", "designer"]'
+              ></span>
+            </h1>
+            <h3>Mateus Machado</h3>
+            <ul className="social-links">
+              <li>
+                <a
+                  href="https://www.instagram.com/machado.fotografia01?igsh=MWtxNzJ6M3R5MzM5dg=="
+                  className="flex"
+                >
+                  <i className="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://linktr.ee/machado0" className="flex">
+                  <i className="fa-solid fa-link" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </header>
+      </header>
       <main className={styles.page}>
       <section id="about" className="about py-7">
             <div className="container">
