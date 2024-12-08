@@ -14,7 +14,12 @@ class TypeWriting {
 
   constructor(element: HTMLElement) {
     this.element = element;
-    this.words = JSON.parse(element.getAttribute('data-words') || '[]');
+    try {
+      this.words = JSON.parse(element.getAttribute('data-words') || '[]');
+    } catch (e) {
+      console.error("Failed to parse data-words attribute:", e);
+      this.words = [];
+    }
     this.speed = parseInt(element.getAttribute('data-speed') || '100', 10);
     this.delay = parseInt(element.getAttribute('data-delay') || '1000', 10);
     this.loop = element.getAttribute('data-loop');
@@ -69,14 +74,14 @@ export default function Home() {
       <header id="header" className="vh-100 flex">
         <div className="container">
           <div className="header-content">
-            <h1>
+            <h1 style={{ height: '200px' }}>
               Eu sou <br />
               <span
                 className="typewrite"
                 data-loop="yes"
                 data-speed="100"
                 data-delay="2000"
-                data-words='[""estudante", "fotografo", "designer"]'
+                data-words='["estudante", "fotógrafo", "designer"]'
               ></span>
             </h1>
             <h3>Mateus Machado</h3>

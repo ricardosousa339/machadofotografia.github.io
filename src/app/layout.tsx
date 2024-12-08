@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import "./globals.css";
 import Head from "next/head";
@@ -13,11 +13,11 @@ export default function RootLayout({
 }>) {
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://kit.fontawesome.com/9e4fa59664.js";
-    script.crossOrigin = "anonymous";
-    script.async = true;
-    document.body.appendChild(script);
+    // const script = document.createElement('script');
+    // script.src = "https://kit.fontawesome.com/9e4fa59664.js";
+    // script.crossOrigin = "anonymous";
+    // script.async = true;
+    // document.body.appendChild(script);
 
     // const script2 = document.createElement('script')
     // script.src = "/public/typewriting-master/typewriting.min.js"
@@ -26,9 +26,9 @@ export default function RootLayout({
     // document.body.appendChild(script2);
 
 
-    return () => {
-      document.body.removeChild(script);
-    };
+    // return () => {
+    //   document.body.removeChild(script);
+    // };
   }, []);
   return (
     <html lang="en">
@@ -36,11 +36,11 @@ export default function RootLayout({
 
       <body>
         {children}
-      <Script
+      {/* <Script
           src="https://kit.fontawesome.com/9e4fa59664.js"
           crossOrigin="anonymous"
           strategy="beforeInteractive"
-        />
+        /> */}
         <Script src="/public/typewriting-master/typewriting.min.js" strategy="beforeInteractive" />
 
       </body>
