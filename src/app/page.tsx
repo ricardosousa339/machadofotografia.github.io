@@ -1,6 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import styles from "./page.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faWebflow } from '@fortawesome/free-brands-svg-icons';
 
 class TypeWriting {
   element: HTMLElement;
@@ -91,13 +93,12 @@ export default function Home() {
                   href="https://www.instagram.com/machado.fotografia01?igsh=MWtxNzJ6M3R5MzM5dg=="
                   className="flex"
                 >
-                  <i className="fab fa-instagram" aria-hidden="true"></i>
+                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>
               <li>
                 <a href="https://linktr.ee/machado0" className="flex">
-                  <i className="fa-solid fa-link" aria-hidden="true"></i>
-                </a>
+                <i className="bi bi-link-45deg"></i>                </a>
               </li>
             </ul>
           </div>

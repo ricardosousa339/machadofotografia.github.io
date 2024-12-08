@@ -220,7 +220,8 @@ h1, h2, h3{
     text-align: center;
 }
 .work-bottom > div .icon img{
-    width: 50px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 1.7rem auto;
 }
 
@@ -394,7 +395,8 @@ h1, h2, h3{
     }
     .about-left{
         margin-bottom: 0;
-     
+        margin-left: 100px;
+        width: 480px;
         
     }
     .contact-content{
